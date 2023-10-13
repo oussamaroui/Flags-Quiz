@@ -107,3 +107,32 @@ h1 {
 .next:hover {
     background-color: #45a049;
 }
+
+@media screen and (max-width:1000px) {
+    .points{
+        width: 80%;
+    }
+}
+
+@media screen and (max-width:600px) {
+    .flag{
+        width:200px;
+    }
+    .points{
+        flex-direction: column;
+    }
+    .buttons{
+        flex-direction: column;
+    }
+    .buttons button:nth-child(2){
+        margin: 15px 0px;
+    }
+    .sm{
+        position:absolute; top: 93vh;
+        right: auto;
+    }
+    .buttons button {
+        padding: 8px 13px;
+        font-size: 13px;
+    }
+}
