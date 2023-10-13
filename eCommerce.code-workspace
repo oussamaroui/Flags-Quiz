@@ -1,0 +1,19 @@
+{
+  "folders": [
+	{
+		"path": "../../../../../../xampp/htdocs/Laravel/eCommerce"
+	},
+	{
+		"path": "../../../../../../xampp/htdocs/Laravel/myStore"
+	},
+	{
+		"path": "."
+	},
+	{
+		"path": "../../../TEST"
+	}
+],
+  "settings": {
+    "liveServer.settings.multiRootWorkspaceName": "brandShop"
+  }
+}
