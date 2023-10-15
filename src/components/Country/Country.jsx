@@ -5,30 +5,22 @@ import { useEffect, useRef, useState } from 'react';
 
 const Country = () => {
 
-    const randomCountry = Math.floor(Math.random() * 249 + 1);
-    const randomOther1 = Math.floor(Math.random() * 249 + 1);
-    const randomOther2 = Math.floor(Math.random() * 249 + 1);
+    function getRandomNumber(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+    const randomIndexs = getRandomNumber(1, 249);
+    const randomOther1 = getRandomNumber(1, 249);
+    const randomOther2 = getRandomNumber(1, 249);
 
     const [previousIndexs, setPreviousIndexs] = useState([]);
-    previousIndexs.push(randomCountry);
-
-    console.log(previousIndexs);
-    // const x = previousIndexs[previousIndexs.length - 1];
-    // const y = [];
-    // y.push(previousIndexs[previousIndexs.length - 1])
-    // console.log(y);
-
-    // function generateRandomNumberExcludingArray(arr, min, max) {
-    //     let randomNum;
-    //     do {
-    //       randomNum = Math.floor(Math.random() * (max - min + 1)) + min;
-    //     } while (arr.includes(randomNum));
-    //     return randomNum;
-    // }
-
-    // const randomNum = generateRandomNumberExcludingArray(existingNumbers, minRange, maxRange);
-    // console.log(randomNum);
-
+    function checkPreviousIndexs(arr, min, max) {
+        let randomIndex;
+        do {
+          randomIndex = Math.floor(Math.random() * (max - min + 1)) + min;
+        } while (arr.includes(randomIndex));
+        return randomIndex;
+    }
+    const randomCountry = checkPreviousIndexs(previousIndexs, 1, 249);
 
     const [country, setCountry] = useState({
         flag : null, name: null, other1 : null, other2 : null, capital : null
@@ -54,13 +46,13 @@ const Country = () => {
                 capital : response.data[randomCountry].capital,
             }));
             cap.current.style.display = 'none' ;
+            previousIndexs.push(randomIndexs)
         });
     };
+    useEffect(getRandomCountry, []);
 
     const countryNames = [country.name, country.other1, country.other2];
     const ButtonNames = countryNames.sort(() => Math.random() - 0.5);
-
-    useEffect(getRandomCountry, []);
 
     function answer(selectedAnswer) {
         if (selectedAnswer == country.name) {

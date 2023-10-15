@@ -129,7 +129,7 @@ h1 {
         margin: 15px 0px;
     }
     .help{
-        margin-top: -15px;
+        margin-top: 20px;
     }
     .sm{
         position:absolute; 
@@ -138,6 +138,7 @@ h1 {
     .buttons button {
         padding: 8px 13px;
         font-size: 13px;
+        margin: 5px;
     }
     .container{
         margin-top: 50px;
