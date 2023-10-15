@@ -120,6 +120,7 @@ h1 {
     }
     .points{
         flex-direction: column;
+        width: 80%;
     }
     .buttons{
         flex-direction: column;
@@ -127,12 +128,18 @@ h1 {
     .buttons button:nth-child(2){
         margin: 15px 0px;
     }
+    .help{
+        margin-top: -15px;
+    }
     .sm{
-        position:absolute; top: 93vh;
+        position:absolute; 
         right: auto;
     }
     .buttons button {
         padding: 8px 13px;
         font-size: 13px;
+    }
+    .container{
+        margin-top: 50px;
     }
 }

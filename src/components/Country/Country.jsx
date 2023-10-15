@@ -9,6 +9,27 @@ const Country = () => {
     const randomOther1 = Math.floor(Math.random() * 249 + 1);
     const randomOther2 = Math.floor(Math.random() * 249 + 1);
 
+    const [previousIndexs, setPreviousIndexs] = useState([]);
+    previousIndexs.push(randomCountry);
+
+    console.log(previousIndexs);
+    // const x = previousIndexs[previousIndexs.length - 1];
+    // const y = [];
+    // y.push(previousIndexs[previousIndexs.length - 1])
+    // console.log(y);
+
+    // function generateRandomNumberExcludingArray(arr, min, max) {
+    //     let randomNum;
+    //     do {
+    //       randomNum = Math.floor(Math.random() * (max - min + 1)) + min;
+    //     } while (arr.includes(randomNum));
+    //     return randomNum;
+    // }
+
+    // const randomNum = generateRandomNumberExcludingArray(existingNumbers, minRange, maxRange);
+    // console.log(randomNum);
+
+
     const [country, setCountry] = useState({
         flag : null, name: null, other1 : null, other2 : null, capital : null
     });
